@@ -24,4 +24,12 @@ export class UsuarioService {
     //indo no método get atráves da Url(ApiUrl) e pegando a lista
     return this.http.get<Response<UsuarioListar[]>>(this.ApiUrl);
   }
+
+  //método delete(para pegar o endpoint do delete la da api e pegar as informações)
+  //retorna a lista de usuarios, porém sem aquele que foi deletado
+  //recebe como parâmetro um number
+  DeletarUsuario(id:number | undefined) : Observable<Response<UsuarioListar[]>>{
+    //a ulr é API + ?usuariosId=numero
+    return this.http.delete<Response<UsuarioListar[]>>(`${this.ApiUrl}?usuariosId=${id}`);
+  }
 }

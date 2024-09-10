@@ -1,12 +1,15 @@
 <div class="container mt-5">
-    <button class="btn btn-success w-100">Cadastrar novo Usuário</button>
+    <!-- essa parte do router é para essa botão levar para a página "cadastro"-->
+    <button class="btn btn-success w-100" [routerLink]="['/cadastro']" routerLinkActive="router-link-active">Cadastrar novo Usuário</button>
     <div>
         <label clas="form-label">Pesquisar:</label>
-        <input class="form-control" type="text" placeholder="Qual usuário deseja buscar?"/>
+        <!-- o evento(aquilo dentro do parenteses) aciona um método do ts-->
+         <!--evento input, tudo que é colocado no evento-->
+        <input class="form-control" type="text" placeholder="Qual usuário deseja buscar?" (input) = "search($event)"/>
     </div>
 
     <table class="table table-hove table-bordered mt-5">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th>Id</th>
                 <th>Nome Completo</th>
@@ -27,9 +30,25 @@
                         <!--interpolação de dados-->
                         <!--para utilizar a propriedade da variavel no ts-->
                         <td>{{usuario.id}}</td>
+                        <td>{{usuario.nomeCompleto}}</td>
+                        <td>{{usuario.email}}</td>
+                        <td>{{usuario.cargo}}</td>
+                        <td>{{usuario.salario}}</td>
+                        <!--Adicionando um ternário(um if de linha só)-->
+                        <td>{{usuario.situacao == true ? "Ativo":"Inativo"}}</td>
+                        <td>
+                            <!--evento de click, ao clickar no botão um método é rodado-->
+                            <button class="btn btn-warning mx-2">Editar</button>
+                            <button class="btn btn-info mx-2">Detalhes</button>
+                            <button class="btn btn-danger mx-2" (click)="deletar(usuario.id)">Excluir</button>
+                        </td>
                     </tr>
 
                 }
+            }@else {
+                <tr class="text-center">
+                    <td colspan="7">Nenhum usuário cadastrado</td>
+                </tr>
             }
 
         </tbody>
