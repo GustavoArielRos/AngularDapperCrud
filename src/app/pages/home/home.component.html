@@ -1,1 +1,40 @@
-<p>home works!</p>
+<div class="container mt-5">
+    <button class="btn btn-success w-100">Cadastrar novo Usuário</button>
+    <div>
+        <label clas="form-label">Pesquisar:</label>
+        <input class="form-control" type="text" placeholder="Qual usuário deseja buscar?"/>
+    </div>
+
+    <table class="table table-hove table-bordered mt-5">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome Completo</th>
+                <th>Email</th>
+                <th>Cargo</th>
+                <th>Salário</th>
+                <th>Situação</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @if(usuarios.length > 0){
+                @for (usuario of usuarios; track $index){
+
+                    <tr>
+                        <!--interpolação de dados-->
+                        <!--para utilizar a propriedade da variavel no ts-->
+                        <td>{{usuario.id}}</td>
+                    </tr>
+
+                }
+            }
+
+        </tbody>
+
+    </table>
+
+
+</div>
