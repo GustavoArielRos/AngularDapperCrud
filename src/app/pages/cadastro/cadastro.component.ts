@@ -14,6 +14,11 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent {
 
+  //para aparecer no html do formulário
+  btnAcao="Cadastrar";
+  descTitulo="Cadastrar Usuários";
+
+
   //fazendo a injeção de dependencia do service para poder usar os métodos, nesse caso usar o post
   //fazendo injeção de dependencia do router para fazer o caminho de volta a página inicial
   constructor(private usuarioService: UsuarioService, private router: Router){}

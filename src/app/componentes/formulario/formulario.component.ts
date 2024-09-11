@@ -13,6 +13,9 @@ import { UsuarioListar } from '../../models/Usuario';
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent implements OnInit{
+  //se é criação ou adição
+  @Input() btnAcao!: string;//cadastrar ou editar
+  @Input() descTitulo!: string;//titulo que aparece
 
   //dadosUsuario irá receber dados vindos do componente Editar
   @Input() dadosUsuario : UsuarioListar | null = null

@@ -1,6 +1,7 @@
-<div>
+<!-- ngIf, a div abaixo só aparece se tiver usuário, ou seja, só quando preenchido o usuario ele aparece-->
+<div *ngIf="usuario">
     <!-- usando o componente formulário-->
     <!-- pegando a variável "usuario" do ts e enviando para a variável "input" do componente formulário
      chamada "dadosUsuario"-->
-    <app-formulario [dadosUsuario] = "usuario"></app-formulario>
+    <app-formulario [dadosUsuario]="usuario" [btnAcao]="btnAcao" [descTitulo]="descTitulo" (onSubmit)="editarUsuario($event)"></app-formulario>
 </div>

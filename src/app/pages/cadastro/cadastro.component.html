@@ -4,5 +4,5 @@
     <!--recebendo aqui a variável onSubmit que veio do componente formulário
     e no final eu envio ela para um outro método agora nesse componente(cadastro)-->
     <!--esse $event são as informações recebidas do "onSubmit"-->
-    <app-formulario (onSubmit)="criarUsuario($event)"></app-formulario>
+    <app-formulario (onSubmit)="criarUsuario($event)" [btnAcao]="btnAcao" [descTitulo]="descTitulo"></app-formulario>
 </div>

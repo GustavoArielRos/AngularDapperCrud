@@ -46,4 +46,11 @@ export class UsuarioService {
     //a ulr é API + id
     return this.http.get<Response<UsuarioListar>>(`${this.ApiUrl}/${id}`);
   }
+
+  //método put()
+  EditarUsuario(usuario: UsuarioListar) : Observable<Response<UsuarioListar[]>>{
+    //passando a url e o usuario recebido no parâmetro
+    return this.http.put<Response<UsuarioListar[]>>(this.ApiUrl, usuario);
+  }
+
 }
