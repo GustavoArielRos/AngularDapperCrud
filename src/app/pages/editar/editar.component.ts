@@ -40,7 +40,7 @@ export class EditarComponent implements OnInit {
   //usa o método do service que é o que se conecta com a api
   editarUsuario(usuario: UsuarioListar){
     this.usuarioService.EditarUsuario(usuario).subscribe(response => {
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
     })
   }
 

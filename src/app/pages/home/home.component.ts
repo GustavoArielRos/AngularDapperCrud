@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit{
   //esse método recebe um número do button
   deletar(id:number | undefined){
     this.serviceUsuario.DeletarUsuario(id).subscribe(response => {
-      window.location.reload()//para recarregar a página após deletar a pessoa
+      window.location.reload();//para recarregar a página após deletar a pessoa
     })
   }
 

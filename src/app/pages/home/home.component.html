@@ -40,7 +40,7 @@
                             <!-- esse botão é um link de rota, e no caso estamos indo para o caminho editar e enviando
                              o id referente ao usuário, o id também aparece na rota(url)-->
                             <button class="btn btn-warning mx-2" [routerLink]="['/editar', usuario.id]">Editar</button>
-                            <button class="btn btn-info mx-2">Detalhes</button>
+                            <button class="btn btn-info mx-2" [routerLink]="['/detalhes', usuario.id]">Detalhes</button>
                             <!--evento de click, ao clickar no botão um método é rodado-->
                             <button class="btn btn-danger mx-2" (click)="deletar(usuario.id)">Excluir</button>
                         </td>

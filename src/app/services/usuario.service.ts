@@ -30,7 +30,7 @@ export class UsuarioService {
   //recebe como parâmetro um number
   DeletarUsuario(id:number | undefined) : Observable<Response<UsuarioListar[]>>{
     //a ulr é API + ?usuariosId=numero
-    return this.http.delete<Response<UsuarioListar[]>>(`${this.ApiUrl}?usuariosId=${id}`);
+    return this.http.delete<Response<UsuarioListar[]>>(`${this.ApiUrl}?usuarioId=${id}`);
   }
 
   //método post(para pegar o endpoint do delete la da api e pegar as informações)
